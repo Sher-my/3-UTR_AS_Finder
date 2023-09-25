@@ -1,2 +1,3 @@
 # 3-UTR_AS_Finder
-Plenty of scripts that finding alternative splicing(AS) events of 3'UTR.
+Finding alternative splicing(AS) events of 3'UTR for Danio rerio during 12-24hpf.
+bash zebrafish.sh
