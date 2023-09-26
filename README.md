@@ -16,4 +16,13 @@ bowtie-build zebrafish_rRNA.fa zebrafish_rRNA<br>
 hisat2-build -p 16 danRer10_CDS.fa zebrafish_CDS_hi<br>
 makeblastdb -in danRer10_3UTR2.fa -dbtype nucl -out zebrafish_3UTR_bl<br>
 cd ../<br>
+## Download SRA file from ncbi
+mkdir 01raw_data<br>
+cd 01raw_data<br>
+prefetch --option-file ../SRR_Acc_List.txt<br>
+cat ../SRR_Acc_List.txt | while read i<br>
+do<br>
+        fastq-dump --split-3 --gzip ${i}/${i}.sra<br>
+done<br>
+cd ../<br>
 # step2 bash zebrafish.sh
