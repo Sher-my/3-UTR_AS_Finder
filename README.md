@@ -1,5 +1,5 @@
 # 3-UTR_AS_Finder
-Finding alternative splicing(AS) events of 3'UTR for Danio rerio during 12-24hpf.
+Finding alternative splicing(AS) events of 3'UTR for Danio rerio during 12.
 ## step1 Preprocessing
 ### Enter your work dir
 wkd = /disk/yt/zebrafish/<br>
