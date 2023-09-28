@@ -18,7 +18,8 @@ mkdir 05blastn
 cat SRR_Acc_List.txt | while read i
 do
         pear -f 04unmap/${i}_unmap.1.fq -r 04unmap/${i}_unmap.2.fq -o 04unmap/${i}
-        blastn -db 00ref/zebrafish_3UTR_bl -query 04unmap/${i}.assembled.fastq -out 05blastn/${i}.txt -outfmt ' 6 qseqid sseqid qstart qend sstart send qseq sseq' -max_hsps 1
+        seqkit fq2fa 04unmap/${i}.assembled.fastq -o 04unmap/${i}.fa
+        blastn -db 00ref/zebrafish_3UTR_bl -query 04unmap/${i}.fa-out 05blastn/${i}.txt -outfmt ' 6 qseqid sseqid qstart qend sstart send qseq sseq' -max_hsps 1
         cp 04unmap/${i}.assembled.fastq 05blastn/${i}.txt
 done
 
